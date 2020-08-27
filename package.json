@@ -1,6 +1,6 @@
 {
-    "name": "wow-spell-tooltips",
-    "displayName": "WoW Spell Tooltips",
+    "name": "wow-spell-tooltips-ru",
+    "displayName": "WoW Spell Tooltips russian",
     "description": "Отображение данных заклинаний World of Warcraft в коде Visual Studio",
     "version": "0.1.4",
     "publisher": "elvador",
