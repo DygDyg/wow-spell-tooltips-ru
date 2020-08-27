@@ -1,0 +1,88 @@
+{
+    "name": "wow-spell-tooltips",
+    "displayName": "WoW Spell Tooltips",
+    "description": "Отображение данных заклинаний World of Warcraft в коде Visual Studio",
+    "version": "0.1.4",
+    "publisher": "elvador",
+    "repository": "elvador/wow-spell-tooltips-code",
+    "license": "MIT",
+    "engines": {
+        "vscode": "^1.47.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "colors": [
+            {
+                "id": "wowSpellTooltips.spellIdBackground",
+                "description": "Цвет фона для идентификаторов заклинаний.",
+                "defaults": {
+                    "dark": "#003443",
+                    "light": "#cbffff",
+                    "highContrast": "#cbffff"
+                }
+            }
+        ],
+        "configuration": {
+            "title": "WoW Spell Tooltips",
+            "properties": {
+                "wowSpellTooltips.minNumber": {
+                    "type": "number",
+                    "default": 100000,
+                    "minimum": 0,
+                    "maximum": 1000000,
+                    "markdownDescription": "Указывает наименьшее число, для которого будут выполняться поиски заклинаний. Если вы работаете со старыми заклинаниями, вы можете понизить значение."
+                },
+                "wowSpellTooltips.maxNumber": {
+                    "type": "number",
+                    "default": 500000,
+                    "minimum": 0,
+                    "maximum": 1000000,
+                    "markdownDescription": "Указывает наибольшее число, для которого будут выполняться проверки орфографии."
+                },
+                "wowSpellTooltips.style.underline": {
+                    "type": "boolean",
+                    "default": true,
+                    "markdownDescription": "Указывает, следует ли подчеркивать идентификаторы."
+                },
+                "wowSpellTooltips.style.backgroundColor": {
+                    "type": "boolean",
+                    "default": true,
+                    "markdownDescription": "Указывает, следует ли выделять идентификаторы другим цветом. Его можно настроить с помощью всплывающих подсказок `wowSpellTooltips.spellIdBackground` в настройках рабочего пространства."
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "lint": "eslint src --ext ts",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "@types/glob": "^7.1.3",
+        "@types/mocha": "^7.0.2",
+        "@types/node": "^13.13.14",
+        "@types/vscode": "^1.47.0",
+        "@typescript-eslint/eslint-plugin": "^2.34.0",
+        "@typescript-eslint/parser": "^2.34.0",
+        "eslint": "^6.8.0",
+        "glob": "^7.1.6",
+        "mocha": "^7.2.0",
+        "typescript": "^3.9.7",
+        "vscode-test": "^1.4.0"
+    },
+    "dependencies": {
+        "csv-parser": "^2.3.3"
+    },
+    "__metadata": {
+        "id": "83f56595-24ad-4f4c-b377-14a940888dff",
+        "publisherId": "c1ff50ce-23d0-4c41-a201-4eebf2c09609",
+        "publisherDisplayName": "elvador"
+    }
+}
